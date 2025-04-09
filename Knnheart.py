@@ -32,6 +32,26 @@ st.write(dt.head(10))
 st.subheader("ข้อมูลส่วนสุดท้าย 10 แถว")
 st.write(dt.tail(10))
 
+# สถิติพื้นฐาน
+st.subheader("📈 สถิติพื้นฐานของข้อมูล")
+st.write(dt.describe())
+
+# การเลือกแสดงกราฟตามฟีเจอร์
+st.subheader("📌 เลือกฟีเจอร์เพื่อดูการกระจายข้อมูล")
+feature = st.selectbox("เลือกฟีเจอร์", dt.columns[:-1])
+
+# วาดกราฟ boxplot
+st.write(f"### 🎯 Boxplot: {feature} แยกตามชนิดของดอกไม้")
+fig, ax = plt.subplots()
+sns.boxplot(data=dt, x='variety', y=feature, ax=ax)
+st.pyplot(fig)
+
+# วาด pairplot
+if st.checkbox("แสดง Pairplot (ใช้เวลาประมวลผลเล็กน้อย)"):
+    st.write("### 🌺 Pairplot: การกระจายของข้อมูลทั้งหมด")
+    fig2 = sns.pairplot(dt, hue='variety')
+    st.pyplot(fig2)
+
 html_8 = """
 <div style="background-color:#6BD5DA;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:black">
 <center><h3 style="color:black;">ทำนายข้อมูล</h3></center>
