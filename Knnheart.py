@@ -74,7 +74,10 @@ if st.button("ทำนายผล"):
     </h1>""", unsafe_allow_html=True)
     st.image("./img/end.jpg")
    else:
-    st.write("แกรอด")
+    st.markdown("""
+    <h1 style='text-align: center; color: green;'>
+        แกรอด
+    </h1>""", unsafe_allow_html=True)
     st.image("./img/happy.jpg")
 else:
     st.write("ไม่ทำนาย")
