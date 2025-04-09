@@ -41,15 +41,15 @@ st.subheader("📌 เลือกฟีเจอร์เพื่อดูก�
 feature = st.selectbox("เลือกฟีเจอร์", dt.columns[:-1])
 
 # วาดกราฟ boxplot
-st.write(f"### 🎯 Boxplot: {feature} แยกตามชนิดของดอกไม้")
+st.write(f"### 🎯 Boxplot: {feature} แยกตามการเป็นไม่เป็นโรคหัวใจ❤️")
 fig, ax = plt.subplots()
-sns.boxplot(data=dt, x='variety', y=feature, ax=ax)
+sns.boxplot(data=dt, x='HeartDisease', y=feature, ax=ax)
 st.pyplot(fig)
 
 # วาด pairplot
 if st.checkbox("แสดง Pairplot (ใช้เวลาประมวลผลเล็กน้อย)"):
-    st.write("### 🌺 Pairplot: การกระจายของข้อมูลทั้งหมด")
-    fig2 = sns.pairplot(dt, hue='variety')
+    st.write("### 💀 Pairplot: การกระจายของข้อมูลทั้งหมด")
+    fig2 = sns.pairplot(dt, hue='HeartDisease')
     st.pyplot(fig2)
 
 html_8 = """
@@ -90,7 +90,7 @@ if st.button("ทำนายผล"):
    if out[0] == 1:
     st.markdown("""
     <h1 style='text-align: center; color: red;'>
-        แกไม่รอดแน่
+        แกไม่รอดแน่💀
     </h1>""", unsafe_allow_html=True)
     st.image("./img/end.jpg")
    else:
