@@ -16,6 +16,16 @@ with col2:
    st.header("Dead")
    st.image("./img/end.jpg")
 
+html_7 = """
+<div style="background-color:#fec8ff;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:black">
+<center><h3 style="color:black;">ข้อมูลโรคหัวใจสำหรับทำนาย</h3></center>
+</div>
+"""
+st.markdown(html_7, unsafe_allow_html=True)
+st.markdown("")
+st.markdown("")
+
+
 st.subheader("ข้อมูลส่วนแรก 10 แถว")
 dt = pd.read_csv("./data/Heart.csv")
 st.write(dt.head(10))
