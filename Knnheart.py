@@ -68,7 +68,10 @@ if st.button("ทำนายผล"):
    out=Knn_model.predict(x_input)
 
    if out[0] == 1:
-    st.write("แกไม่รอดแน่")
+    st.markdown("""
+    <h1 style='text-align: center; color: red;'>
+        แกไม่รอดแน่
+    </h1>""", unsafe_allow_html=True)
     st.image("./img/end.jpg")
    else:
     st.write("แกรอด")
