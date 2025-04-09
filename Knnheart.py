@@ -67,7 +67,7 @@ if st.button("ทำนายผล"):
    
    out=Knn_model.predict(x_input)
 
-   if out[0] == '1':
+   if out[0] == 1:
     st.write("คุณรอด")
     st.image("./img/happy.jpg")
    else:
